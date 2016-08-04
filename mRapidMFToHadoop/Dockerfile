@@ -11,7 +11,7 @@ COPY . ./
 
 #In the Dockerfile, add a local file using ADD
 #ADD your-local.jar /some-container-location
-ADD /mRapidMFToHadoop/target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
+ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
 
 #You could use volumes to put a file in the container in runtime
 VOLUME /mRapidMFToHadoop/myJar
