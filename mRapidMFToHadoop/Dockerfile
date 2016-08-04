@@ -3,17 +3,19 @@ MAINTAINER Chaitali Kanetkar
 
 WORKDIR /mRapidMFToHadoop
 
-# Update the repositories and then install java
-#RUN apt-get update && install -y default-jre
+# Copy the pom.xml into the container to install all dependencies
+COPY pom.xml ./
 
-# Copy the application from its folder to our image
-# Assumes docker build is run from /myapp/src
-#ADD /var/lib/jenkins/workspace/Data_Ingestion/target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /home/bigdata_coe/chaitali_workspace/jar
+# Copy the whole repository into the container
+COPY . ./
 
-ADD src /home/bigdata_coe/chaitali_workspace/mRapidMFToHadoop/src
+#In the Dockerfile, add a local file using ADD
+#ADD your-local.jar /some-container-location
+ADD /mRapidMFToHadoop/target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
 
-# Run the app when the container is executed.
-#CMD ["java", "-jar mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
+#You could use volumes to put a file in the container in runtime
+VOLUME /mRapidMFToHadoop/myJar
 
-EXPOSE 4567  
+EXPOSE 4567 
+ENTRYPOINT ["java", "-jar", "target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
 CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
