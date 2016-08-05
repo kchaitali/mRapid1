@@ -14,7 +14,7 @@ COPY . ./
 COPY mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
 
 #You could use volumes to put a file in the container in runtime
-VOLUME /mRapidMFToHadoop/myJar
+VOLUME /mRapidMFToHadoop/target/
 
 EXPOSE 4567 
 ENTRYPOINT ["java", "-jar", "target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
