@@ -69,7 +69,7 @@
 					<manifest>
 						<!-- Jar file entry point -->
 						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
-						<!--<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass> -->
+						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>
 						<classpathPrefix>dependency-jars/</classpathPrefix>
 					</manifest>
 				  </archive>
