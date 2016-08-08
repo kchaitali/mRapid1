@@ -72,26 +72,32 @@
           </execution>
         </executions>
         <configuration>
+        <archive>
+		<manifest>
+						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
+						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>
+						<classpathPrefix>dependency-jars/</classpathPrefix>
+					</manifest>
+				  </archive>
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
         </configuration>
       </plugin>
       
-      <plugin>
+      <!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
 				  <archive>
 					<manifest>
-						<!-- Jar file entry point -->
 						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
 						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>
 						<classpathPrefix>dependency-jars/</classpathPrefix>
 					</manifest>
 				  </archive>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
