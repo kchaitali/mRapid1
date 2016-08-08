@@ -61,7 +61,7 @@
 				</configuration>
 			</plugin>
 			
-			<plugin>
+			<!--  <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
@@ -83,9 +83,9 @@
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
         </configuration>
-      </plugin>
+      </plugin>-->
       
-      <!-- <plugin>
+     <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
@@ -97,7 +97,7 @@
 					</manifest>
 				  </archive>
 				</configuration>
-			</plugin> -->
+			</plugin>
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
