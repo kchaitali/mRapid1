@@ -13,16 +13,10 @@
     <version>2.4</version>
 </dependency>
 
-<dependency>
-    <groupId>org.apache.maven</groupId>
-    <artifactId>maven-compat</artifactId>
-    <version>3.0.5</version>
-    <scope>test</scope>
-</dependency>
-
 </dependencies> 
   
   <build>
+  
   <plugins>
   <!-- download source code in Eclipse, best practice -->
   <plugin>
@@ -44,10 +38,12 @@
         <archive>
           <manifest>
             <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
-			<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>
+             <mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
+            <classpathPrefix>dependency-jars/</classpathPrefix>
           </manifest>
+          <manifestEntries>
+			 <Class-Path>.</Class-Path>
+		  </manifestEntries>
         </archive>
       </configuration>
     </plugin>
@@ -62,7 +58,7 @@
 					<phase>package</phase>
 					<goals>
 						<goal>copy-dependencies</goal>
-					</goals>
+        			</goals>
 					<configuration>
 					  <!-- exclude junit, we need runtime dependency only -->
 					  <includeScope>runtime</includeScope>
