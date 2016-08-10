@@ -91,6 +91,7 @@
 				<configuration>
 				  <archive>
 					<manifest>
+						<addClasspath>true</addClasspath>
 						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
 						<!--  <mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>-->
 						<classpathPrefix>dependency-jars/</classpathPrefix>
