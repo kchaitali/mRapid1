@@ -6,8 +6,7 @@
   <name>Data_Ingestion_Framework</name>
   <packaging>jar</packaging>
   
-  <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
- <dependencies>
+   <dependencies>
 <dependency>
     <groupId>commons-io</groupId>
     <artifactId>commons-io</artifactId>
@@ -21,86 +20,39 @@
     <scope>test</scope>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/com.spotify/docker-maven-plugin -->
-<dependency>
-    <groupId>com.spotify</groupId>
-    <artifactId>docker-maven-plugin</artifactId>
-    <version>0.1.1</version>
-</dependency>
-
-
-</dependencies>  
+</dependencies> 
   
   <build>
-    <sourceDirectory>src/framework</sourceDirectory>
-    <resources>
-      <resource>
-        <directory>lib</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-      
-      <plugin>
+  <plugins>
+  <!-- download source code in Eclipse, best practice -->
+  <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.9</version>
 				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
+				<downloadSources>true</downloadSources>
+				<downloadJavadocs>false</downloadJavadocs>
 				</configuration>
-			</plugin>
+	</plugin>
 			
-			<!--  <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>2.4</version>
+      <configuration>
         <archive>
-		<manifest>
-						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
-						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>
-						<classpathPrefix>dependency-jars/</classpathPrefix>
-					</manifest>
-				  </archive>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-      </plugin>-->
-      
-     <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-				  <archive>
-					<manifest>
-						<addClasspath>true</addClasspath>
-						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
-						<!--  <mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>-->
-						<classpathPrefix>dependency-jars/</classpathPrefix>
-					</manifest>
-				  </archive>
-				</configuration>
-			</plugin>
-			
-			<plugin>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
+			<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+    
+    <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.5.1</version>
@@ -119,7 +71,7 @@
 				  </execution>
 				</executions>
 			</plugin>
-      
-    </plugins>
-  </build>
+  </plugins>
+  
+</build>
 </project>
