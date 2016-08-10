@@ -24,6 +24,21 @@
           <target/>
         </configuration>
       </plugin>
+      
+      <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+				  <archive>
+					<manifest>
+						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHDFS</mainClass>
+						<mainClass>com.capgemini.mf2hadoop.Mf2HadoopHIVE</mainClass>
+						<classpathPrefix>dependency-jars/</classpathPrefix>
+					</manifest>
+				  </archive>
+				</configuration>
+			</plugin>
+      
     </plugins>
   </build>
 </project>
