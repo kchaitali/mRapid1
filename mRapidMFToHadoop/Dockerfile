@@ -17,5 +17,5 @@ COPY mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
 VOLUME /mRapidMFToHadoop/target/
 
 EXPOSE 4567 
-ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
+CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
