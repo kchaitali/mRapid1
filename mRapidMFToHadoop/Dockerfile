@@ -18,5 +18,5 @@ VOLUME /mRapidMFToHadoop/target/
 
 EXPOSE 4567 
 ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
-#CMD ["mRapidMFToHadoop-0.0.1-SNAPSHOT.jar","hgduserm.copyc2.txt","mRapidTable","mRapid","DELIMITED","\t","\n","TEXTFILE","hguserm.txt","mf.txt"]
+#CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
+CMD ["cpybook_mf_ebcdic_data.txt","mf_ebcdic_data_file1.txt","mf.txt"]
