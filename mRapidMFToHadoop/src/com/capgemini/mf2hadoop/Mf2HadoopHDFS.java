@@ -21,17 +21,23 @@ public class Mf2HadoopHDFS {
 		
 		
 		//Read the MF layout (copybook file)
-		MFCopyBookReader reader = new MFCopyBookReader(); 
+		System.out.println(layoutFileName + " :: " + mfDataFileName + " :: " + outputFileName);
+		MFCopyBookReader reader = new MFCopyBookReader();
+		System.out.println(" here 1");
 		StringBuffer layoutFileBuffer = reader.readLayoutFile(layoutFileName);
-		
+		System.out.println(" here 2");
 		//Parse the read layout file to retrieve the field list
-		MFCopyBookParser parser = new MFCopyBookParser(); 
+		MFCopyBookParser parser = new MFCopyBookParser();
+		System.out.println(" here 3");
 		List<Field> fieldList = parser.parseLayoutFile(layoutFileBuffer);
-		
+		System.out.println(" here 4");
 		MFDataFileReaderWriter mfDataFileReaderWriter = new MFDataFileReaderWriter(mfDataFileName, outputFileName);
+		System.out.println(" here 5");
 		//Read the data from the mainframe ebcdic file
 		MFDataReader mfReader = new MFDataReader();
+		System.out.println(" here 6");
 		mfReader.readData(fieldList, mfDataFileReaderWriter);
+		System.out.println(" here 7");
 		mfDataFileReaderWriter.closeFileStreams();
 		
 		
