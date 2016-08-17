@@ -1,0 +1,21 @@
+000100 01  ACCT-DETAIL.                                                 00010000
+000200     05  ACCT-ORG           PIC 9(03).                            00020000
+000210     05  ACCT-NUM           PIC X(19).                            00020000
+000220     05  ACCT-LOGO          PIC 9(03).                            00020000
+000230     05  ACCT-TXN-EFF       PIC S9(07) COMP-3.                    00020000
+000240     05  ACCT-TXN-CODE      PIC 9(05).                            00020000
+000250     05  ACCT-LM            PIC 9(03).                            00020000
+000260     05  ACCT-TXN-DESC      PIC X(20).                            00020000
+000270     05  ACCT-TXN-AMT       PIC S9(17) COMP-3.                    00020000
+000280     05  ACCT-REF-NUM       PIC X(25).                            00020000
+000290     05  ACCT-PLN-NUM       PIC 9(05).                            00020000
+000300     05  ACCT-PLN-SEQ       PIC S9(04) COMP.                      00020000
+000400     05  ACCT-POST-FL       PIC 9(02).                            00020000
+000500     05  ACCT-BLK1          PIC X(01).                            00020000
+000600     05  ACCT-BLK2          PIC X(01).                            00020000
+000900     05  ACCT-PO-NBR        PIC 9(05).                            00060002
+001000     05  ACCT-TXN-SRC       PIC 9(01).                            00060002
+001100     05  ACCT-SRCE          PIC 9(04).                            00060002
+001200     05  ACCT-COLL          PIC X(03).                            00060002
+001300     05  FILLER             PIC X(01).                            00060002
+001400	   05  ACCT-FILLER        PIC 9(02) COMP.			00060002
