@@ -31,6 +31,8 @@ public class Mf2HadoopHDFS {
 		System.out.println(" here 3");
 		List<Field> fieldList = parser.parseLayoutFile(layoutFileBuffer);
 		System.out.println(" here 4");
+		System.out.println("mfDataFileName"+mfDataFileName);
+		System.out.println("outputFileName"+outputFileName);
 		MFDataFileReaderWriter mfDataFileReaderWriter = new MFDataFileReaderWriter(mfDataFileName, outputFileName);
 		System.out.println(" here 5");
 		//Read the data from the mainframe ebcdic file
