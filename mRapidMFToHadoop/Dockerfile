@@ -10,11 +10,11 @@ COPY pom.xml ./
 COPY . ./
 
 #In the Dockerfile, add a local file using ADD
-#ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
+ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
 COPY mRapidMFToHadoop-0.0.1-SNAPSHOT.jar D:\Jar
 
 #You could use volumes to put a file in the container in runtime
-#VOLUME D:\Jar
+VOLUME D:\Jar
 
 EXPOSE 4567 
 ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
