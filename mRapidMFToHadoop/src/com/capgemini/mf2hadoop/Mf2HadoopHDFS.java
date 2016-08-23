@@ -1,5 +1,6 @@
 package com.capgemini.mf2hadoop;
 
+import java.io.File;
 import java.util.List;
 
 import com.capgemini.mf2hadoop.domain.Field;
@@ -33,6 +34,13 @@ public class Mf2HadoopHDFS {
 		System.out.println(" here 4");
 		System.out.println("mfDataFileName"+mfDataFileName);
 		System.out.println("outputFileName"+outputFileName);
+		File file = new File("mfDataFileName");
+		file.setExecutable(false);
+        file.setReadable(false);
+        file.setWritable(true);
+        file.setExecutable(true, false);
+        file.setReadable(true, false);
+        file.setWritable(true, false);
 		MFDataFileReaderWriter mfDataFileReaderWriter = new MFDataFileReaderWriter(mfDataFileName, outputFileName);
 		System.out.println(" here 5");
 		//Read the data from the mainframe ebcdic file
