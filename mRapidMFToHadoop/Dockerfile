@@ -2,7 +2,7 @@ FROM jenkins:1.609.1
 MAINTAINER Chaitali Kanetkar
 
 WORKDIR /mRapidMFToHadoop
-
+RUN chmod 755 /
 # Copy the pom.xml into the container to install all dependencies
 COPY pom.xml ./
 
@@ -18,6 +18,7 @@ ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /mRapid.jar
 
 EXPOSE 4567 
 #ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
+
 RUN bash -c 'touch /mRapid.jar'
 ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "/mRapid.jar"]
 #CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
