@@ -13,12 +13,12 @@ COPY . ./
 VOLUME /Jar
 
 #In the Dockerfile, add a local file using ADD
-ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar mRapid.jar
+ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /mRapid.jar
 #COPY mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /
 
 EXPOSE 4567 
 #ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
 RUN bash -c 'touch /app.jar'
-ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapid.jar"]
+ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "/mRapid.jar"]
 #CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
 CMD ["D:\\Users\\ckanetka\\Desktop\\data\\cpybook_mf_ebcdic_data.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf_ebcdic_data_file1.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf.txt"]
