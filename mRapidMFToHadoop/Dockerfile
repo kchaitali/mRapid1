@@ -2,7 +2,7 @@ FROM jenkins:1.609.1
 MAINTAINER Chaitali Kanetkar
 
 WORKDIR /mRapidMFToHadoop
-RUN sudo chmod 755 /
+
 # Copy the pom.xml into the container to install all dependencies
 COPY pom.xml ./
 
@@ -11,6 +11,7 @@ COPY . ./
 
 #You could use volumes to put a file in the container in runtime
 VOLUME /Jar
+RUN sudo chmod 755 /
 
 #In the Dockerfile, add a local file using ADD
 ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /mRapid.jar
