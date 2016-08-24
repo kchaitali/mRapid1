@@ -2,7 +2,7 @@ FROM jenkins:1.609.1
 MAINTAINER Chaitali Kanetkar
 
 WORKDIR /mRapidMFToHadoop
-
+RUN apt-get install sudo 
 # Copy the pom.xml into the container to install all dependencies
 COPY pom.xml ./
 
