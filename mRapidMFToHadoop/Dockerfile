@@ -16,7 +16,7 @@ COPY . ./
 VOLUME /Jar
 
 #In the Dockerfile, add a local file using ADD
-ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /mRapid.jar
+#ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /mRapid.jar
 #COPY mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /
 
 EXPOSE 4567 
