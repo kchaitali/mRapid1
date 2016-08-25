@@ -1,4 +1,4 @@
-FROM jenkins:1.609.1
+FROM ubuntu:12.04
 MAINTAINER Chaitali Kanetkar
 
 WORKDIR /mRapidMFToHadoop
