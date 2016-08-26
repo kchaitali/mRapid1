@@ -25,5 +25,5 @@ EXPOSE 4567
 
 #RUN bash -c 'touch /mRapid.jar'
 ENTRYPOINT ["java", "-jar", "/mRapid.jar"]
-#CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
-CMD ["D:\\Users\\ckanetka\\Desktop\\data\\cpybook_mf_ebcdic_data.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf_ebcdic_data_file1.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf.txt"]
+CMD "echo" "Hello, docker conatiner is created!"
+#CMD ["D:\\Users\\ckanetka\\Desktop\\data\\cpybook_mf_ebcdic_data.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf_ebcdic_data_file1.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf.txt"]
