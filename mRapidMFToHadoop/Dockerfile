@@ -1,9 +1,10 @@
-FROM ubuntu:12.04
+#FROM ubuntu:12.04
+FROM java
 MAINTAINER Chaitali Kanetkar
 
 WORKDIR /mRapidMFToHadoop
-RUN apt-get update && \
-apt-get -y install sudo
+#RUN apt-get update && \
+#apt-get -y install sudo
 
 #RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 # Copy the pom.xml into the container to install all dependencies
@@ -22,7 +23,7 @@ ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /mRapid.jar
 EXPOSE 4567 
 #ENTRYPOINT ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
 
-RUN bash -c 'touch /mRapid.jar'
+#RUN bash -c 'touch /mRapid.jar'
 ENTRYPOINT ["java", "-jar", "/mRapid.jar"]
 #CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "mRapidMFToHadoop-0.0.1-SNAPSHOT.jar"]
 CMD ["D:\\Users\\ckanetka\\Desktop\\data\\cpybook_mf_ebcdic_data.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf_ebcdic_data_file1.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf.txt"]
