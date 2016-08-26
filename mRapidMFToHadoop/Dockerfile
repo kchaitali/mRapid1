@@ -18,6 +18,9 @@ VOLUME /Jar
 
 #In the Dockerfile, add a local file using ADD
 ADD mRapidMFToHadoop-0.0.1-SNAPSHOT.jar /mRapid.jar
+ADD mf_ebcdic_data_file1.txt /
+ADD cpybook_mf_ebcdic_data.txt /
+ADD mf.txt /
 #COPY mRapid.jar /
 
 EXPOSE 4567 
@@ -25,5 +28,5 @@ EXPOSE 4567
 
 #RUN bash -c 'touch /mRapid.jar'
 ENTRYPOINT ["java", "-jar", "/mRapid.jar"]
-CMD "echo" "Hello, docker conatiner is created!"
-#CMD ["D:\\Users\\ckanetka\\Desktop\\data\\cpybook_mf_ebcdic_data.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf_ebcdic_data_file1.txt","D:\\Users\\ckanetka\\Desktop\\data\\mf.txt"]
+#CMD "echo" "Hello, docker conatiner is created!"
+CMD ["/cpybook_mf_ebcdic_data.txt","/mf_ebcdic_data_file1.txt","/mf.txt"]
