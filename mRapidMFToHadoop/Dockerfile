@@ -1,5 +1,5 @@
 #FROM ubuntu:12.04
-FROM java
+FROM chaitalikanetkar/mrapid1:latest
 MAINTAINER Chaitali Kanetkar
 
 WORKDIR /mRapidMFToHadoop
