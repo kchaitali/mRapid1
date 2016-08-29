@@ -18,8 +18,11 @@ public class MFCopyBookReader {
 	public StringBuffer readLayoutFile(String fileName) {
 		StringBuffer buffer = new StringBuffer();
 		try {
-			File inputFile = new File(fileName);
-			System.out.println(inputFile.getPath() + "::" + inputFile.getCanonicalPath() + " :: " inputFile.getAbsolutePath());
+			fileName = fileName.replaceAll("\\",File.separator);
+			FileInputStream inputFile = new FileInputStream(path);
+//			File inputFile = new File(fileName);
+			System.out.println(inputFile.getPath() + "::" + inputFile.getCanonicalPath() + " :: "  + inputFile.getAbsolutePath());
+//			path = path.replaceAll("\\",File.separator);
 			FileReader reader = new FileReader(inputFile);
 			BufferedReader bufferedReader = new BufferedReader(reader);
 			String line;
