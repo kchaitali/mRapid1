@@ -48,6 +48,7 @@ public class Mf2HadoopHDFS {
 		System.out.println(" here 6");
 		mfReader.readData(fieldList, mfDataFileReaderWriter);
 		System.out.println(" here 7");
+		System.out.println("here 8");
 		mfDataFileReaderWriter.closeFileStreams();
 		
 		
