@@ -30,6 +30,7 @@ public class Mf2HadoopHDFS {
 		List<Field> fieldList = parser.parseLayoutFile(layoutFileBuffer);
 		System.out.println("mfDataFileName"+mfDataFileName);
 		System.out.println("outputFileName"+outputFileName);
+		System.out.println("Test");
 		File file = new File("mfDataFileName");
 		file.setExecutable(false);
         file.setReadable(false);
